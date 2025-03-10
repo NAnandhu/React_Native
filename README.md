@@ -1,37 +1,27 @@
-# Recipe Finder App - User Module
+# Recipe Finder (React Native)
 
-## Overview
-The **Recipe Finder App** is a web and mobile application that allows users to manage their accounts by adding, updating, deleting, and retrieving user information. This project consists of a **React Native frontend**, a **Next.js backend**, and a **MySQL database** for a responsive and user-friendly interface.
-
----
+Recipe Finder is a React Native application that allows users to add, update, delete, and search for recipes.
 
 ## Features
-### **User Module**
-- **Add User**: Users can create an account with their details.
-- **Update User**: Modify existing user information.
-- **Delete User**: Remove a user from the database.
-- **Get Users**: Retrieve a list of registered users.
-- **Manage Recipes**: Users can add, update, delete, and search for recipes.
-
----
+- **Add Recipe**: Users can add new recipes with details.
+- **Update Recipe**: Modify existing recipe information.
+- **Delete Recipe**: Remove a recipe from the database.
+- **Search Recipe**: Find recipes based on keywords.
 
 ## Tech Stack
 ### **Frontend**
 - React Native
 - Expo
-- Bootstrap 5 (for web components)
 
 ### **Backend**
-- Next.js (API Routes)
 - NestJS
-- MySQL (Database)
-
----
+- MySQL
 
 ## Installation & Setup
 ### **Prerequisites**
 Ensure you have the following installed:
-- Node.js (v16+)
+- Node.js
+- Expo CLI
 - MySQL Database
 - Git
 
@@ -55,7 +45,7 @@ cd recipe-finder
    npx expo start
    ```
 
-### **Backend Setup (Next.js + NestJS)**
+### **Backend Setup (NestJS)**
 1. Navigate to the backend directory:
    ```sh
    cd backend
@@ -64,7 +54,20 @@ cd recipe-finder
    ```sh
    npm install
    ```
-3. Configure the MySQL database connection in `.env`:
+3. Start MySQL service (if not already running):
+   ```sh
+   sudo systemctl start mysql
+   ```
+4. Access MySQL and create the database manually:
+   ```sh
+   mysql -u root -p
+   ```
+   Then, inside MySQL:
+   ```sql
+   CREATE DATABASE recipe_finder;
+   USE recipe_finder;
+   ```
+5. Configure the MySQL database connection in `.env`:
    ```env
    DB_HOST=localhost
    DB_PORT=3306
@@ -72,19 +75,10 @@ cd recipe-finder
    DB_PASSWORD=yourpassword
    DB_NAME=recipe_finder
    ```
-4. Run database migrations
-   ```sh
-   sudo systemctl start mysql
-   ```
-5. Start the Next.js server:
+6. Start the NestJS server:
    ```sh
    npm run start:dev
    ```
-
-## Technologies Used
-- **Frontend:** React Native, Expo, Bootstrap 5
-- **Backend:** Next.js, NestJS
-- **Database:** MySQL
 
 ## Contributing
 Feel free to submit pull requests or report issues.
