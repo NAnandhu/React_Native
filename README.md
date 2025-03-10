@@ -27,8 +27,8 @@ Ensure you have the following installed:
 
 ### **Clone the Repository**
 ```bash
-git clone https://github.com/yourusername/recipe-finder.git
-cd recipe-finder
+git clone https://git@github.com:NAnandhu/React_Native.git
+cd RecipeFinder
 ```
 
 ### **Frontend Setup (React Native)**
